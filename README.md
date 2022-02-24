@@ -1,6 +1,6 @@
 # Electromechanical-7Segment
 
-![](other/ezgif-5-9716ad1de3.gif)
+![gif](https://media.giphy.com/media/BfCka32XOwIcqpyVK0/giphy.gif)
 
 All details available here: 
 
