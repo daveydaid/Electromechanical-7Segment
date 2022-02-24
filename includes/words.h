@@ -1,3 +1,11 @@
+/**************************************************************************
+ * FILE NAME: words.h                                                     *
+ * DESCRIPTION: Contains list of potential words to be displayed		  *
+ *				Most not contain K, M, V, Y, X or Z						  *
+ *				Best to keep array < ~100 entried to save mem			  *
+ * VERSION: 1 (03/02/2022)												  *
+ *************************************************************************/  
+
 char *myWords[] =    {"ANUS",
                       "ARSE",
                       "BABY",

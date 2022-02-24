@@ -1,7 +1,7 @@
 /*#####################################################################################################
 #
 # Title:    7_Seg_Electromechanical_Clock_TMC2208
-# Version:  3.6
+# Version:  3.6b
 # Auth:     DMcD
 # Date:     01/02/2022
 #
@@ -30,9 +30,6 @@
 # PREPROCESSOR DIRECTIVES
 #####################################################################################################*/
 #define DEBUG_MODE  1
-
-//#define TIME_MODE   0
-//#define TIMER_MODE  1
 
 #define ENABLE      0
 #define DIRECTION   1
@@ -218,7 +215,7 @@ bool h12Flag, pmFlag;
 #
 # Retuns:       n/a 
 #
-# TODO:         Test 2 and 3. Also, see top note about arrays
+# TODO:         See top note about arrays
 #####################################################################################################*/
 void updatePositions(uint8_t a[8], uint8_t NUMBER) {  
   uint8_t i;
@@ -449,7 +446,6 @@ void updatePositions(uint8_t a[8], uint8_t NUMBER) {
 #
 # Retuns:       n/a 
 #
-# TODO:         Make the groupPosition array constructions a loop  
 #####################################################################################################*/
 void updateMotors(uint8_t GROUP){
   uint8_t i;
@@ -1070,7 +1066,6 @@ void displayTime(){
 #
 # Retuns:       n/a
 #
-# TODO:         Input request (in minutes) converted to seconds means we will need bigger than uint8_t
 #####################################################################################################*/
 void runTimerCountdown(){
   storedSecond = 0;
