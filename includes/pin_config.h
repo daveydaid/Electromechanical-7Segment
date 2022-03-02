@@ -8,10 +8,12 @@
 #define BLACK_BUTTON_1      3     // SET_TIME Button (Interrupt Enabled) - Active LOW
 #define BLACK_BUTTON_2      2     // SET_TIME Button (Interrupt Enabled) - Active LOW 
 #define WHITE_BUTTON_1      16    // UP_COUNTER Button - Active LOW
-#define WHITE_BUTTON_2      17    // xxxxxxxx Button (unassigned for now) - Active LOW
+#define WHITE_BUTTON_2      19    // LED_CONTROL Button (Interrupt Enabled) - Active LOW
 #define RED_BUTTON          18    // GENERATE_WORD Button (Interrupt Enabled) - Active LOW
 
 #define BUZZER_PIN          46    // Configure as signal pin for the piezo buzzer, must be specific pin based on lib
+
+#define LED_GATE_CONTROL    15    // Output pin to the gate of MOSFET for controlling LED strip
 
 #define STEP_PIN_0          13    // M0 (A) STEP line - Pin 2 of each BIGTREETECH-TMC2208-V3.0  (MINUTES_UNITS)
 #define STEP_PIN_1          12    // M1 (B) STEP line - Pin 2 of each BIGTREETECH-TMC2208-V3.0  (MINUTES_UNITS)

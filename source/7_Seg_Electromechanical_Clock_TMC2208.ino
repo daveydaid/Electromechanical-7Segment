@@ -1279,7 +1279,7 @@ void whiteTwoButtonISR(){
   
   if((long)(micros() - last_micros) >= debouncing_time * 1000)
   {
-    digitalWrite(15, !digitalRead(15));
+    digitalWrite(LED_GATE_CONTROL, !digitalRead(LED_GATE_CONTROL));
     last_micros = micros();
   }
 }
@@ -1535,9 +1535,9 @@ void setup() {
   pinMode (BUZZER_PIN, OUTPUT);  // Note that only certain pins can be used
   digitalWrite(BUZZER_PIN, LOW);
 
-  // Configure LED pin
-  pinMode (15, OUTPUT);  // Note that only certain pins can be used
-  digitalWrite(15, LOW); 
+  // Configure LED control pin
+  pinMode (LED_GATE_CONTROL, OUTPUT);
+  digitalWrite(LED_GATE_CONTROL, LOW); 
   
 //-------- Configure the UART setup --------------------
   SERIAL_PORT.begin(57600);      // HW UART drivers
