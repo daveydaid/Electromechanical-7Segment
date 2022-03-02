@@ -1,8 +1,8 @@
 /**************************************************************************
  * FILE NAME: 7seglist.h                                                  *
- * DESCRIPTION: Contains all possible motor positions					  *
- * VERSION: 1 (03/02/2022)												  *
- *************************************************************************/                                                    
+ * DESCRIPTION: Contains all possible motor positions                     *
+ * VERSION: 1 (03/02/2022)                                                *
+ *************************************************************************/
 
 uint8_t defaultHome[8] =  {0,0,0,0,0,0,0,0};          //All motors to 0
 uint8_t defaultTop[8] =   {1,1,1,1,1,1,1,1};          //All motors to 1

@@ -1,9 +1,9 @@
 /**************************************************************************
  * FILE NAME: notes.h                                                     *
  * DESCRIPTION: Contains all possible notes/frequencies for piezo buzzer  *
- *				Most commented out to save some mem						  *
- * VERSION: 1 (03/02/2022)												  *
- *************************************************************************/  
+ *        Most commented out to save some mem                             *
+ * VERSION: 1 (03/02/2022)                                                *
+ *************************************************************************/
 
 //#define NOTE_B0  31
 //#define NOTE_C1  33
