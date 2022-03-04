@@ -1,13 +1,12 @@
 /*#####################################################################################################
 #
 # Title:    7_Seg_Electromechanical_Clock_TMC2208
-# Version:  3.7
+# Version:  3.8
 # Auth:     DMcD
-# Date:     02/03/2022
+# Date:     04/03/2022
 #
-# References:
-#
-# TODO: Make shiftValues_n & numbernPositions values into 2D arrays; then can get rid of large switches
+# TODO: - Make shiftValues_n & numbernPositions values into 2D arrays; then can get rid of large switches
+#       - Add error-checking. i.e. Error return codes and checking returns from each function
 #
 #####################################################################################################*/
 
@@ -80,7 +79,7 @@ uint8_t timerMinutes = 0;
 uint16_t melody[9] = {
   NOTE_C7, 16, NOTE_A6, 16, NOTE_B6, 16, NOTE_C7, 8, REST
 };
-// ^ THIS NEED TO BE GLOBAL. NO IDEA WHY. (Better now that I set the size?)
+// ^ THIS NEED TO BE GLOBAL. NO IDEA WHY.
 
 /*#####################################################################################################
 # OBJECT DECLARATIONS
@@ -153,8 +152,6 @@ bool h12Flag, pmFlag;
 #               uint8_t NUMBER - which number's motor poisitons should be updated?     
 #
 # Retuns:       n/a 
-#
-# TODO:         Test 2 and 3. Also, see top note about arrays
 #####################################################################################################*/
 void updatePositions(uint8_t a[8], uint8_t NUMBER) {  
   uint8_t i;
@@ -384,8 +381,6 @@ void updatePositions(uint8_t a[8], uint8_t NUMBER) {
 # Inputs:       uint8_t GROUP - which numebr group should be updated/moved? See definitions at top
 #
 # Retuns:       n/a 
-#
-# TODO:         Make the groupPosition array constructions a loop  
 #####################################################################################################*/
 void updateMotors(uint8_t GROUP){
   uint8_t i;
@@ -564,7 +559,6 @@ void homeMotors() {
   Serial.println("   HOMING");
 
   updatePositions(defaultHome, ALL_NUMBERS);
-
   updateMotors(GROUP_ALL);  
 
   Serial.println("         END OF HOMING");  
@@ -583,7 +577,6 @@ void topMotors() {
   Serial.println("BRINGING ALL TO TOP POSITION");
 
   updatePositions(defaultTop, ALL_NUMBERS);
-
   updateMotors(GROUP_ALL);
 }
 
@@ -722,7 +715,6 @@ void runNumbers() {
   while (j < 10)
   {    
     updatePositions(numberValues[j], ALL_NUMBERS);
-                
     updateMotors(GROUP_ALL);
     delay(250);
   
@@ -753,7 +745,6 @@ void runNumbersBackwards() {
   while (j >= 0)
   {
     updatePositions(numberValues[j], ALL_NUMBERS);
-
     updateMotors(GROUP_ALL);
     delay(100);
   
@@ -785,7 +776,6 @@ void runLetters() {
   while (j < 20)
   {
     updatePositions(letterValues[j], ALL_NUMBERS);
-                
     updateMotors(GROUP_ALL);
     delay(250);
   
@@ -1006,7 +996,6 @@ void displayTime(){
 #
 # Retuns:       n/a
 #
-# TODO:         Input request (in minutes) converted to seconds means we will need bigger than uint8_t
 #####################################################################################################*/
 void runTimerCountdown(){
   storedSecond = 0;
@@ -1119,7 +1108,6 @@ void runTimerCountdown(){
     } 
 
     // Check if the RTC seconds have looped back
-//    if((rtcClock.getSecond()==0) && (secondCounter > 0))
     if(secondCounter > currentSecond)
     {
       secondCounter = 0; 
