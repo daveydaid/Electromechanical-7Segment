@@ -4,4 +4,4 @@
 
 # Detailed Blog Post: 
 
-[hhttps://davidmcdaid.wordpress.com/2022/03/08/electromechanical-7-segment-display/](url)
+[https://davidmcdaid.wordpress.com/2022/03/08/electromechanical-7-segment-display/](url)
